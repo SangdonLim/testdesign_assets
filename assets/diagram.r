@@ -8,7 +8,7 @@ names <- c("Item pool\nloadItemPool()",
            "Optimal Test Assembly",
            "Adaptive Assembly\nShadow()",
            "Maximum information\nTarget TIF\nTarget TCC",
-           "",
+           "Multiple-form Assembly\nSplit()",
            "Linear-on-the-fly\nMST on the fly\nFully adaptive\nHybrid")
 
 par(mar = rep(0.5, 4), font = 2)
@@ -17,7 +17,7 @@ k <-  length(names)
 M <-  matrix(nrow = k, ncol = k, byrow = TRUE, data = 0)
 colnames(M) <- rownames(M) <- names
 
-M[2, 1] <- M[4, 2] <- M[4, 3] <- M[6, 4] <- M[5, 6] <- M[7, 6] <- M[8, 5] <- M[10, 7] <- ""
+M[2, 1] <- M[4, 2] <- M[4, 3] <- M[6, 4] <- M[5, 6] <- M[7, 6] <- M[8, 5] <- M[10, 7] <- M[9, 6] <- ""
 
 arr <- matrix(nrow = k, ncol = k, byrow = TRUE, data = .25)
 arr[8, 5] <- arr[10, 7] <- 0
@@ -31,12 +31,12 @@ plotmat(M, coord, name = names, lwd = 1, curve = 0,
         box.lwd = c(2, 2, 2, 2, 2, 2, 2, 2, 2, 2), cex.txt = 0.8,
         box.size = c(0.1, 0.1, 0.1, 0.1, 0.1, 0.125, 0.1),
         box.type = 'rect',
-        box.prop = c(0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.5, 0.5),
+        box.prop = c(0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.5),
         box.col = c('white', 'white', 'white', 'white', 'white', 'grey75', 'white', 'white', 'white', 'white'),
-        box.lcol = c('black', 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'white', 'black'),
+        box.lcol = c('black', 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'black', 'black'),
         txt.col = c('black', 'black', 'black', 'black', 'black', 'black', 'black'),
         shadow.col = c('grey75', 'grey75', 'grey75', 'grey75', 'grey75', 'grey50', 'grey75'),
-        shadow.size = c(0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0, 0.005),
+        shadow.size = c(0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005),
         arr.length = arr,
         arr.width = arr, arr.type = "triangle", arr.pos = .5,
         font = 2)
